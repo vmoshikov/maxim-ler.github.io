@@ -1,0 +1,42 @@
+// *{outline: 1px solid lime;}
+
+// one : for ie
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.clear{clear: both;}
+
+body{
+	padding: 0;
+	margin: 0;
+
+	background: #fff;
+	color: #313131;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+
+	img{
+		max-width: 100%;
+		height: auto;
+		
+		// for ie 9
+		border: 0;
+	}
+	
+	ul{list-style: none;}
+	a{text-decoration: none;}
+	
+	.wrap{
+		margin-left: auto;
+		margin-right: auto;
+		height: 100%;
+		
+		// max-width: 1430px;
+		max-width: 100%;
+	}
+}

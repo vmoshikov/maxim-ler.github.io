@@ -1,0 +1,161 @@
+header{
+	background: #263238;
+
+	.header-logo{
+		float: left;
+		width: 200px;
+		height: 80px;
+
+		background: #fff;
+
+		a{
+			display: block;
+			font-size: 0;
+
+			margin-left: 23px;
+			margin-top: 13px;
+
+			-webkit-transition: all .3s;
+			-o-transition: all .3s;
+			transition: all .3s;
+
+			&:hover{
+				opacity: .5;
+			}
+		}
+	}
+
+	.header-info{
+		float: right;
+		min-height: 80px;
+		padding-right: 30px;
+
+		color: #fff;
+		font-size: 18;
+
+		position: relative;
+
+		.icon {
+	    border-top: 4px #fff solid;
+	    border-bottom: 4px #fff solid;
+	    width: 30px;
+	    height: 4px;
+	    position: absolute;
+	    top: 48%;
+	    left: 7px;		    
+	    cursor: pointer;
+
+	    display: none;
+
+	    -webkit-transition: all .3s;
+			-o-transition: all .3s;
+			transition: all .3s;
+		  
+	    &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        width: 100%;
+        border-top: 4px #fff solid;
+        margin-top: -14px;
+        cursor: pointer;
+	    }
+
+	    &:hover{
+				opacity: .5;
+			}
+		}
+
+		.map{
+			display: inline-block;
+			vertical-align: center;
+			
+			a{
+				color: #fff;
+				font-size: 18;
+
+				-webkit-transition: all .3s;
+				-o-transition: all .3s;
+				transition: all .3s;
+
+				&:hover{
+					opacity: .5;
+				}
+			}
+		}
+
+		.tel-text{
+			display: inline-block;
+			vertical-align: center;
+			margin-left: 18px;
+		}
+
+		.tel{
+			display: inline-block;
+			vertical-align: center;
+			margin: 0;
+			padding-left: 42px;
+			
+			a{
+				position: relative;
+
+				-webkit-transition: all .3s;
+				-o-transition: all .3s;
+				transition: all .3s;
+
+				&:hover{
+					opacity: .5;
+				}
+
+				&:after{
+					content: '';
+					position: absolute;
+					top: 3px;
+					left: -25px;
+					background: url('../img/tel.png') no-repeat;
+					width: 12px;
+					height: 20px;
+				}
+
+				color: #fff;
+				line-height: 80px;
+			}
+		}
+
+		form{
+			display: inline-block;
+			vertical-align: center;
+			margin-top: 19px;
+			margin-left: 16px;
+
+
+			input{
+				padding-left: 46px;
+				padding-right: 20px;
+				width: 322px;
+				height: 36px;
+				box-sizing: border-box;
+
+				border: 2px solid #fff;
+				background: #263238 url('../img/magnef.png') 10px 5px no-repeat;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				-ms-border-radius: 3px;
+				-o-border-radius: 3px;
+				border-radius: 3px;
+
+				color: #fff;
+				font-size: 18;
+				line-height: 36px;
+
+				&::placeholder{
+					color: #fff;
+					font-size: 18;
+					line-height: 36px;
+				}
+			}
+		}
+	}
+}
