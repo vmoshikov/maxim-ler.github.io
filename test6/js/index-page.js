@@ -55,6 +55,93 @@ $(function() {
 
 
 
+
+	// Initialize a new plugin instance for all
+	// e.g. $('input[type="range"]') elements.
+	$('input[type="range"]').rangeslider({
+
+    // Feature detection the default is `true`.
+    // Set this to `false` if you want to use
+    // the polyfill also in Browsers which support
+    // the native <input type="range"> element.
+    polyfill: false,
+
+    // Default CSS classes
+    rangeClass: 'rangeslider',
+    disabledClass: 'rangeslider--disabled',
+    horizontalClass: 'rangeslider--horizontal',
+    verticalClass: 'rangeslider--vertical',
+    fillClass: 'rangeslider__fill',
+    handleClass: 'rangeslider__handle',
+
+    // Callback function
+    onInit: function() {},
+
+    // Callback function
+    onSlide: function(position, value) {},
+
+    // Callback function
+    onSlideEnd: function(position, value) {}
+});
+
+
+	// Destroy all plugin instances created from the
+	// e.g. $('input[type="range"]') elements.
+	// $('input[type="range"]').rangeslider('destroy');
+
+	// Update all rangeslider instances for all
+	// e.g. $('input[type="range"]') elements.
+	// Usefull if you changed some attributes e.g. `min` or `max` etc.
+	// $('input[type="range"]').rangeslider('update', true);
+
+
+
+
+
+	$.ajax({
+      type: "GET",
+      url: "https://robasta.ru/ajax/marks.php",
+      success: function(data) {
+          var mark_options = '<option value = ""></option>';
+
+          data = JSON.parse(data);
+          $.each(data,function(i,el) {
+              mark_options += '<option value = "' + data[i] + '">' + data[i] + '</option>';
+          });
+
+          $('#mark').html(mark_options);
+      }
+  });
+
+  $('#mark').on('change', function() {
+      $.ajax({
+          type: "GET", //Метод отправки
+          url: "https://robasta.ru/ajax/models.php",
+          data: 'mark=' + $('#mark').val(),
+          success: function (data) {
+              var model_options = '<option value = ""></option>';
+
+              data = JSON.parse(data);
+              $.each(data, function (i, el) {
+                  model_options += '<option value = "' + data[i] + '">' + data[i] + '</option>';
+              });
+
+              $('#model').html(model_options);
+          }
+      });
+  });
+
+  $('#form').on('click', function() {
+      //здесь надо отправлять запрос на свой сервер и действовать в соответствии с документацией https://docs.google.com/document/d/1UiR7TX0GHN0JpIGsVQYOx8ZLQ_JqoY8-MPXRzzZkwxI/edit
+  });
+
+
+
+
+
+
+
+
 	// запуск и подключение icheck
 	// $('input').iCheck({
 	// 	checkboxClass: 'icheckbox_polaris',
